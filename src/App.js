@@ -6,7 +6,7 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import { Main } from "./pages/main.js";
+import { Main } from "./pages/main.tsx";
 import { Resume } from "./pages/resume/resume.js";
 
 

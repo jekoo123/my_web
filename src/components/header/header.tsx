@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Nav, ExternalNav } from "./styled.tsx";
+import { Container, Nav, ExternalNav } from "./styled.ts";
 
 export const Header: React.FC = () => {
   //nav contents : github, 자기소개, 영상
