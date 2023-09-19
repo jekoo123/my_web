@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Main } from "./pages/main.tsx";
-import { Resume } from "./pages/resume/resume.js";
+import { Resume } from "./pages/resume/resume.tsx";
 import { Lobby } from "./pages/pokemon/pokemonLobby.tsx";
 
 export default function App() {

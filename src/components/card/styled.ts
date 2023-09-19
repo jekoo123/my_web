@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export const InfoContainer = styled.div`
   opacity: 0;
-  margin-left: 120px;
+  margin-left:10vw;
   width: 600px;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateY(20px);
@@ -16,10 +16,12 @@ export const InfoContainer = styled.div`
 
 export const Container = styled(Link)<ContainerProps>`
   width: 100%;
-  height: 300px;
+  height: 30vh;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content:space-between;
+  padding-left: 10vw;
+  padding-right:20vw;
   transition: all 0.3s ease;
   text-decoration:none;
 
@@ -53,14 +55,13 @@ export const Container = styled(Link)<ContainerProps>`
 
 
 export const Info = styled.div`
-  font-size: 27px;
+  font-size: 1.5vw;
   font-weight: bold;
   color: #0e4791;
-  margin-bottom: 20px;
 `;
 
 export const CardText = styled.div`
-  font-size:30px;
+  font-size:2vw;
   font-style:italic;
   font-weight:bold;
   color:black;
