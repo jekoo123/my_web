@@ -1,13 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Container = styled(Link)`
+interface ContainerProps {
+  colorKey: number;
+}
+
+export const InfoContainer = styled.div`
+  opacity: 0;
+  margin-left: 120px;
+  width: 600px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+`;
+
+
+export const Container = styled(Link)<ContainerProps>`
   width: 100%;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content:center;
   transition: all 0.3s ease;
+  text-decoration:none;
+
+  
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.4);
   background: ${(props) => {
     switch (props.colorKey) {
@@ -22,17 +38,19 @@ export const Container = styled(Link)`
     }
   }};
 
-  &:hover {
-    opacity: 0.5;
+
+
+  &:hover{
+    opacity: 1;
     transition: opacity 0.5s ease;
+    ${InfoContainer} {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
-export const InfoContainer = styled.div`
-  opacity: 0;
-  margin-left: 120px;
-  width: 600px;
-`;
+
 
 export const Info = styled.div`
   font-size: 27px;
@@ -42,5 +60,8 @@ export const Info = styled.div`
 `;
 
 export const CardText = styled.div`
-
+  font-size:30px;
+  font-style:italic;
+  font-weight:bold;
+  color:black;
 `;

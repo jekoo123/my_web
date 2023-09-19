@@ -7,5 +7,6 @@ export const MainPage = styled.div`
   padding:30px 10px;
   width:100%;
   display:flex;
+  flex-direction:column;
   justify-content:center;
 `;

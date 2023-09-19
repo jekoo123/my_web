@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../components/card/card";
+import { Card } from "../components/card/card.tsx";
 import { MainPage } from "./styled.ts";
 
 interface FunctionData {
@@ -9,12 +9,21 @@ interface FunctionData {
 }
 
 export const Main: React.FC = () => {
-  // 타입을 FunctionData 배열로 명시
   const functiondata: FunctionData[] = [
     {
       name: "Resume",
       discription: "Look or Download Jekoo's Resume",
       route: "/resume",
+    },
+    {
+      name: "Play Game",
+      discription: "Play Jekoo's Game",
+      route: "/lobby",
+    },
+    {
+      name: "Talk with Jekoo",
+      discription: "Play Jekoo's Game",
+      route: "/",
     },
   ];
 

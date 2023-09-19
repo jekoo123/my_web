@@ -8,14 +8,13 @@ import {
 } from "react-router-dom";
 import { Main } from "./pages/main.tsx";
 import { Resume } from "./pages/resume/resume.js";
-
-
+import { Lobby } from "./pages/pokemon/pokemonLobby.tsx";
 
 export default function App() {
   return (
-      <Router>
-        <Header />
-        <Routes>
+    <Router>
+      <Header />
+      <Routes>
         <Route
           exact
           path="/"
@@ -24,9 +23,8 @@ export default function App() {
         />
         <Route exact path="/main" element={<Main />} />
         <Route exact path="/resume" element={<Resume />} />
-
-
-        </Routes>
-      </Router>
+        <Route exact path="/lobby" element={<Lobby />} />
+      </Routes>
+    </Router>
   );
 }
