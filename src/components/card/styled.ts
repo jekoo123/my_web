@@ -15,24 +15,23 @@ export const InfoContainer = styled.div`
 
 
 export const Container = styled(Link)<ContainerProps>`
-  width: 100%;
   height: 30vh;
+  width:70%;
   display: flex;
   align-items: center;
   justify-content:space-between;
-  padding-left: 10vw;
+  padding-left: 5vw;
   padding-right:20vw;
   transition: all 0.3s ease;
   text-decoration:none;
-
+  margin-bottom:1vh;
   
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.4);
   background: ${(props) => {
     switch (props.colorKey) {
       case 0:
-        return "linear-gradient(to bottom, #EBFFE7, #D1FFC7)";
+        return "linear-gradient(to bottom, white, #E3FFFE)";
       case 1:
-        return "linear-gradient(to right, #DCFFFE,#B7FFFA )";
+        return "linear-gradient(to right, white, white)";
       case 2:
         return "linear-gradient(to top left, white, #C9FFCF, white)";
       default:
@@ -52,6 +51,11 @@ export const Container = styled(Link)<ContainerProps>`
   }
 `;
 
+
+export const StyledImg = styled.img`
+  width:10vw;
+  margin-right:3vw;
+`
 
 
 export const Info = styled.div`

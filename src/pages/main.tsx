@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "../components/card/card.tsx";
-import { MainPage } from "./styled.ts";
+import { MainPage,CardArea } from "./styled.ts";
 
 interface FunctionData {
   name: string;

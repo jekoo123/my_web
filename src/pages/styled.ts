@@ -3,10 +3,14 @@ import styled from "styled-components";
 
 
 export const MainPage = styled.div`
-  margin-top:4.5vh;
-  padding:30px 0px;
-  width:100%;
+  margin-top:10vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  align-items:center;
 `;
+
+export const CardArea = styled.div`
+  display:flex;
+  align-items:center;
+`
