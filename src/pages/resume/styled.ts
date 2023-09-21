@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin-top: 10vh;
-  width: 80%;
-  height: 50vh;
+export const ResumePage = styled.div`
+  margin-top:10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:10vh;
+`;
+
+export const ContentsContainer = styled.div`
+  display: flex;
+  border:1px solid black;
+  
+
 `;
 
 export const DocumentContainer = styled.div`
-  width: 70%;
-  margin: auto;
-  height: 50vh;
+  
 `;

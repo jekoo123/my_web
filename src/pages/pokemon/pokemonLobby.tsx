@@ -30,7 +30,6 @@ interface Pokemon {
     front_shiny_female: string;
     [key: string]: string | null;
   };
-  // ... 추가로 필요한 필드를 이곳에
 }
 
 export const Lobby = () => {
@@ -38,16 +37,16 @@ export const Lobby = () => {
   const [disableLoad, setDisableLoad] = useState<boolean>(false);
   const [mypokemon, setMypokemon] = useState<Pokemon[]>([]);
   const [selectedpokemon, setselectedpokemon] = useState<Pokemon[]>([]);
-  const [message, setMessage] = useState<string>("포켓몬을 로드하세요.");
+  const [message, setMessage] = useState<string>("Load Your Pokemons");
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (selectedpokemon.length > 0) {
       if (selectedpokemon.length >= 3) {
-        setMessage("선택 완료");
+        setMessage("Complete");
       } else {
-        setMessage("포켓몬을 세 마리 선택하세요.");
+        setMessage("Choose Three Pokemons");
       }
     }
   }, [selectedpokemon]);
@@ -72,7 +71,7 @@ export const Lobby = () => {
       ]);
     } else {
       setMessage(
-        "이미 세 개를 선택하셨습니다. 선택을 취소하려면 포켓몬을 다시 누르세요."
+        "You already choose three Pokemons"
       );
     }
   };
@@ -116,7 +115,7 @@ export const Lobby = () => {
   };
 
   const game_setting = () => {
-    setMessage("포켓몬을 세 마리 선택하세요.");
+    setMessage("Choose three Pokemons");
 
     if (disableLoad) {
       return;
@@ -125,11 +124,11 @@ export const Lobby = () => {
 
     setCountLoading(countLoading + 1);
     if (countLoading > 4) {
-      alert("로드 횟수 초과");
+      alert("Too many loads");
       return;
     }
     setselectedpokemon([]);
-    setMypokemon([]); //이게 비동기적이라 한번에 빠르게 누르면 초과해서 로드ㅠㅠ
+    setMypokemon([]);
 
     const newNumbersSet = new Set();
     while (newNumbersSet.size < 6) {

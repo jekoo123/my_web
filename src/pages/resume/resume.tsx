@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import { Container,DocumentContainer } from "./styled.ts";
+import { ResumePage, ContentsContainer, DocumentContainer } from "./styled.ts";
+
+// 예를 들어, 스피너 컴포넌트
+const Spinner = () => <div>Loading...</div>;
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export const Resume: React.FC = () => {
   const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
   }
 
   return (
-    <Container>
-      <button onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
-
-      <DocumentContainer >
-        <Document
-          file="/KangJekoo_pr.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-      </DocumentContainer>
-      <div>
-        Page {pageNumber} of {numPages}
-      </div>
-      <button onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
-    </Container>
+    <ResumePage>
+      <ContentsContainer>
+        <DocumentContainer>
+          <Document
+            file="/KangJekoo_pr.pdf"
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            {Array.from({ length: numPages ?? 0 }, (_, i) => (
+              <>
+                <Page key={i + 1} pageNumber={i + 1} loading={<div>LETSGO</div>} />
+                <hr></hr>
+              </>
+            ))}
+          </Document>
+        </DocumentContainer>
+      </ContentsContainer>
+    </ResumePage>
   );
 };
